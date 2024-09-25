@@ -1,0 +1,43 @@
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  gap: 24px
+}
+
+h1{
+  font-size: 72px;
+  margin: 0;
+}
+
+form{
+  position: relative;
+  min-width: 600px;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  div{
+    width: 100%;
+    input{
+      width: 100%;
+      min-height: 40px;
+    }
+  }
+  button{
+    width: 100%;
+    min-height: 40px;
+    background-color: aqua;
+    font-size: 40px;
+  }
+  span{
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top:-48px;
+    left: 0;
+    cursor: pointer;
+  }
+}

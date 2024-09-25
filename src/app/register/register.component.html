@@ -1,0 +1,16 @@
+<section>
+  <h1>Register</h1>
+  <form>
+    <span [routerLink]="['login']">Login</span>
+    <div>
+      <input type="text" [(ngModel)]="user.name" name="name" placeholder="name">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="user.email" name="email" placeholder="email">
+    </div>
+    <div>
+      <input type="password" [(ngModel)]="user.password" name="password" placeholder="password">
+    </div>
+    <button type="submit" (click)="saveUser()">Send</button>
+  </form>
+</section>
