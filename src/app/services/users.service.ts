@@ -26,7 +26,7 @@ export class UsersService {
 
   refreshToken(){
     const refresh_token = this.getrefreshToken();
-    return this.httpClient.post<any>(`${this.baseUrl}/users/refresh`, refresh_token);
+    return this.httpClient.post<any>(`${this.baseUrl}/users/refresh`, {refresh_token});
   }
 
   getAuthToken(){
