@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UsersService } from '../services/users.service';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +18,7 @@ export interface LoginResponse {
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  constructor(private readonly usersService: UsersService){}
+  constructor(private readonly usersService: UsersService, private readonly router: Router){}
   user = {
     email: "",
     password: ""
@@ -27,14 +27,15 @@ export class LoginComponent {
   async logUser(){
     try {
       let resp: any =  await this.usersService.loginUser(this.user);
-      // this.user.email = "";
-      // this.user.password = "";
+      this.user.email = "";
+      this.user.password = "";
       console.log(resp);
 
       if(resp['access_token']){
         localStorage.setItem('token', resp.access_token);
         localStorage.setItem('refreshToken', resp.refresh_token);
       }
+      this.router.navigate(['/dashboard'])
       return resp;
     } catch (error) {
       console.log(error);

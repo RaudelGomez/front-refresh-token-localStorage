@@ -1,0 +1,15 @@
+<section>
+  <h1>current user: {{idUser$}}</h1>
+  @if(currentUser){
+    <p>name: {{currentUser.name}}</p>
+    <p>email: {{currentUser.email}}</p>
+    <ul>
+      @for(rol of currentUser.roles; track $index){
+        <li>{{rol}}</li>
+      }
+    </ul>
+  }
+  <h2 [routerLink]="['/dashboard']">BACK</h2>
+  <h3 (click)="logOut()">LogOut</h3>
+</section>
+

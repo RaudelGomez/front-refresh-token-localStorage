@@ -2,7 +2,8 @@
 <section>
   <ul>
     @for(user of users; track $index){
-      <li>{{user.email}}</li>
+      <li [routerLink]="['/users/'+ user.id]" (click)="sendIdUser(user.id)">{{user.email}} - {{user.id}}</li>
     }
   </ul>
+  <h2 (click)="logOut()">Logout</h2>
 </section>
